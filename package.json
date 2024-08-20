@@ -1,0 +1,26 @@
+{
+  "name": "pw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:ui": "npx playwright test",
+    "ui-mode": "npx playwright test --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "@types/ajv": "^1.0.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^22.4.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "ajv": "^8.17.1",
+    "dotenv": "^16.4.5",
+    "lodash": "^4.17.21"
+  }
+}
