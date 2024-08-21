@@ -6,7 +6,7 @@ export interface IRequestOptions {
   headers?: Record<string, string>;
 }
 
-export interface IResponse<T = object> {
+export interface IResponse<T extends IResponseFields> {
   status: number;
   body: T;
   headers: object;
@@ -17,4 +17,9 @@ export enum STATUS_CODES {
   CREATED = 201,
   DELETED = 204,
   INVALID_REQUEST = 400,
+}
+
+export interface IResponseFields {
+  IsSuccess: boolean;
+  ErrorMessage: string | null;
 }
