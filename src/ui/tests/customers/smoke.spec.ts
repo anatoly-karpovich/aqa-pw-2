@@ -19,9 +19,14 @@ test.describe("[UI] [Customers] Smoke", async function () {
     await signInService.loginAsAdmin();
   });
 
+  test.afterEach(async function ({ page }) {
+    //TODO: delete customer
+  });
+
   test("Create customer with valid data", async function () {
     await homeService.openCustomersPage();
     await customersService.openAddNewCustomerPage();
     await addNewCustomerService.create();
+    //TODO: check customer in table
   });
 });

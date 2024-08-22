@@ -4,16 +4,16 @@ import { SalesPortalPage } from "../salesPortal.page";
 export class AddNewCustomerPage extends SalesPortalPage {
   readonly uniqueElement = '//h2[.="Add New Customer "]';
 
-  private readonly "Name input" = "#inputName";
-  private readonly "Email input" = "#inputEmail";
-  private readonly "Country dropdown" = "select#inputCountry";
-  private readonly "City input" = "#inputCity";
-  private readonly "Street input" = "#inputStreet";
-  private readonly "House input" = "#inputHouse";
-  private readonly "Flat input" = "#inputFlat";
-  private readonly "Phone input" = "#inputPhone";
-  private readonly "Notes textarea" = "#textareaNotes";
-  private readonly "Save New Customer button" = "#save-new-customer";
+  readonly "Name input" = "#inputName";
+  readonly "Email input" = "#inputEmail";
+  readonly "Country dropdown" = "select#inputCountry";
+  readonly "City input" = "#inputCity";
+  readonly "Street input" = "#inputStreet";
+  readonly "House input" = "#inputHouse";
+  readonly "Flat input" = "#inputFlat";
+  readonly "Phone input" = "#inputPhone";
+  readonly "Notes textarea" = "#textareaNotes";
+  readonly "Save New Customer button" = "#save-new-customer";
 
   async fillInputs(customer: Partial<ICustomer>) {
     customer.name && (await this.setValue(this["Name input"], customer.name));

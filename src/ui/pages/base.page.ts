@@ -1,5 +1,6 @@
 import { Locator, Page } from "@playwright/test";
-import { IResponse } from "../../data/types/api.types";
+import { IResponse, IResponseFields } from "../../data/types/api.types";
+import { logStep } from "../../utils/report/logStep";
 
 const DEFAULT_TIMEOUT = 10000;
 
@@ -32,21 +33,25 @@ export class BasePage {
     return element;
   }
 
+  @logStep()
   protected async click(locator: LocatorOrSelector, timeout = DEFAULT_TIMEOUT) {
     const element = await this.waitForElementAndScroll(locator, timeout);
     await element.click();
   }
 
+  @logStep()
   protected async setValue(locator: LocatorOrSelector, value: string | number, timeout = DEFAULT_TIMEOUT) {
     const element = await this.waitForElementAndScroll(locator, timeout);
     await element.fill(String(value), { timeout });
   }
 
+  @logStep()
   protected async getText(locator: LocatorOrSelector, timeout = DEFAULT_TIMEOUT) {
     const element = await this.waitForElementAndScroll(locator, timeout);
     return await element.innerText({ timeout });
   }
 
+  @logStep()
   protected async selectDropdownValue(
     dropdownLocator: LocatorOrSelector,
     value: string | number,
@@ -56,11 +61,15 @@ export class BasePage {
     await element.selectOption(String(value), { timeout });
   }
 
+  @logStep()
   async openPage(url: string) {
     await this.page.goto(url);
   }
 
-  async interceptResponse<T>(url: string, triggerAction: () => Promise<void>): Promise<IResponse<T>> {
+  async interceptResponse<T extends IResponseFields>(
+    url: string,
+    triggerAction: () => Promise<void>
+  ): Promise<IResponse<T>> {
     const [response] = await Promise.all([this.page.waitForResponse(url), triggerAction()]);
     return {
       body: (await response.json()) as T,
