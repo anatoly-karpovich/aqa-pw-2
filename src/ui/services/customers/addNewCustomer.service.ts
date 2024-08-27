@@ -24,7 +24,6 @@ export class AddCustomerService {
 
   @logStep()
   async save() {
-    console.log(this);
     await this.addNewCustomerPage.clickOnSaveButton();
   }
 

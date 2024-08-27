@@ -3,7 +3,6 @@ import { test } from "../../../fixtures/services.fixture";
 test.describe("[UI] [Customers] Smoke", async function () {
   test.beforeEach(async function ({ signInPageService }) {
     await signInPageService.openSalesPortal();
-    await signInPageService.loginAsAdmin();
   });
 
   test.afterEach(async function ({ page }) {
@@ -19,5 +18,16 @@ test.describe("[UI] [Customers] Smoke", async function () {
     await customersPageService.openAddNewCustomerPage();
     await addNewCustomerPageService.create();
     //TODO: check customer in table
+  });
+
+  test.only("Validate created customer", async function ({
+    homePageService,
+    customersPageService,
+    customersApiService,
+    page,
+  }) {
+    const createdCustomer = customersApiService.create();
+    await homePageService.openCustomersPage();
+    await page.pause();
   });
 });

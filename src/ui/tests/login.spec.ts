@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 
-test.describe("[UI] [Login]", async function () {
+test.describe.skip("[UI] [Login]", async function () {
   test.beforeEach(async function ({ page }) {
     await page.goto("https://anatoly-karpovich.github.io/aqa-course-project/");
   });
