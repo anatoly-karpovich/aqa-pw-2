@@ -27,7 +27,7 @@ jobs:
 
       # Step 4: Run Playwright tests and update screenshots
       - name: Run Playwright tests
-        run: npm run test:ui -- --update-snapshots
+        run: npm run test:visual -- --update-snapshots
 
       # Step 5: Check if there are changes to the screenshots
       - name: Check for changes
