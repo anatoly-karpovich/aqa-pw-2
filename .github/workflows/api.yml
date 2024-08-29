@@ -20,11 +20,11 @@ jobs:
         run: npx playwright install --with-deps
 
       # Run Playwright UI tests
-      - name: Run Playwright UI tests
+      - name: Run Playwright API tests
         env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
-        run: npm run test:ui
+        run: npm run test:api
         continue-on-error: true
 
       # Create Allure report
@@ -35,5 +35,5 @@ jobs:
       - name: Save Allure report
         uses: actions/upload-artifact@v2
         with:
-          name: ui-report
+          name: api-report
           path: ./allure-report
