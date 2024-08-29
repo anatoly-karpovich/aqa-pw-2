@@ -1,0 +1,15 @@
+{
+  "cookies": [
+    {
+      "name": "Authorization",
+      "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTA0OTkzYWFlNDQwMTg0YWY2NDc3YiIsInJvbGVzIjpbIkFETUlOIl0sImlhdCI6MTcyNDc4ODE1NywiZXhwIjoxNzI0ODc0NTU3fQ.IRJio5YSgD09NXRjGw8wQYH_SB6eqzICcO0_7SWSuSk",
+      "domain": "anatoly-karpovich.github.io",
+      "path": "/aqa-course-project/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
