@@ -71,7 +71,7 @@ export default defineConfig({
       name: "visual",
       use: {
         ...devices["Desktop Chrome"],
-        headless: false,
+        headless: true,
       },
       testMatch: /.*\.visual\.ts/,
     },
