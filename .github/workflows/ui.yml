@@ -18,7 +18,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      # Run Playwright tests
+      # Run Playwright UI tests
       - name: Run Playwright UI tests
         env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
@@ -33,5 +33,5 @@ jobs:
       - name: Save Allure report
         uses: actions/upload-artifact@v2
         with:
-          name: ui-report
+          name: regression-report
           path: ./allure-report
