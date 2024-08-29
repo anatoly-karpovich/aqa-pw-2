@@ -1,4 +1,4 @@
-name: Run Playwright UI tests
+name: Run Playwright API tests
 on:
   workflow_dispatch: # Manually trigger the workflow
 jobs:
