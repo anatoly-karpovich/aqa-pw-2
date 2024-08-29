@@ -13,7 +13,12 @@ export function validateSchema<T extends IResponseFields>(response: IResponse<T>
   expect(isValidSchema).toBe(true);
 }
 
-export function validateResponse<T extends IResponseFields>(response: IResponse<T>, status: number, IsSuccess: boolean, ErrorMessage: null | string) {
+export function validateResponse<T extends IResponseFields>(
+  response: IResponse<T>,
+  status: number,
+  IsSuccess: boolean,
+  ErrorMessage: null | string
+) {
   expect(response.status).toBe(status);
   expect(response.body.IsSuccess).toBe(IsSuccess);
   expect(response.body.ErrorMessage).toBe(ErrorMessage);
