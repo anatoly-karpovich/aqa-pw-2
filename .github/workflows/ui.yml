@@ -26,3 +26,14 @@ jobs:
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
         run: npm run test:ui
         continue-on-error: true
+
+      # Create Allure report
+      - name: Create Allure report
+        run: npm run report-create
+
+      # Save report into artifacts
+      - name: Save Allure report
+        uses: actions/upload-artifact@v2
+        with:
+          name: regression-report
+          path: ./allure-report
