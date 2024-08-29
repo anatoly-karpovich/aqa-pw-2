@@ -10,7 +10,7 @@ const test = mergeTests(mockTest, servicesTest);
 test.describe("[UI] [Customers] Smoke", async function () {
   test.beforeEach(async function ({ signInPageService }) {
     await signInPageService.openSalesPortal();
-    await signInPageService.loginAsAdmin();
+    // await signInPageService.loginAsAdmin();
   });
 
   test("Create customer with valid data", async function ({ homePageService, customersPageService, mock }) {

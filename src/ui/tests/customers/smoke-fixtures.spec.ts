@@ -1,6 +1,6 @@
 import { test } from "../../../fixtures/services.fixture";
 
-test.describe("[UI] [Customers] Smoke", async function () {
+test.describe("[UI] [Customers] Smoke with fixtures", async function () {
   test.beforeEach(async function ({ signInPageService }) {
     await signInPageService.openSalesPortal();
   });
@@ -9,7 +9,7 @@ test.describe("[UI] [Customers] Smoke", async function () {
     //TODO: delete customer
   });
 
-  test("Create customer with valid data", async function ({
+  test("Create customer with valid data with fixture", async function ({
     homePageService,
     customersPageService,
     addNewCustomerPageService,
