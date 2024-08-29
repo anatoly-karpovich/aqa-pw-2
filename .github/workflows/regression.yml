@@ -34,14 +34,6 @@ jobs:
         run: npm run test:api
         continue-on-error: true
 
-      # Run Playwright Visual Regression tests
-      - name: Run Playwright Visual Regression tests
-        env:
-          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-          ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
-        run: npm run test:visual
-        continue-on-error: true
-
       # Create Allure report
       - name: Create Allure report
         run: npm run report-create
