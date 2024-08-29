@@ -24,6 +24,8 @@ jobs:
         env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+          SLACK_NOTIFICATION_URL: ${{ secrets.SLACK_NOTIFICATION_URL }}
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
         run: npm run test:ui
         continue-on-error: true
 
