@@ -20,7 +20,7 @@ test.describe("[UI] [Customers] Smoke", async function () {
     //TODO: check customer in table
   });
 
-  test.only("Validate created customer", async function ({
+  test("Validate created customer", async function ({
     homePageService,
     customersPageService,
     customersApiService,

@@ -34,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: api-report
-          path: src/report/allure-report
+          path: ./allure-report
