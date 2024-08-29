@@ -35,7 +35,7 @@ jobs:
         continue-on-error: true
 
       # Run Playwright Visual Regression tests
-      - name: Run Playwright API tests
+      - name: Run Playwright Visual Regression tests
         env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
           ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
