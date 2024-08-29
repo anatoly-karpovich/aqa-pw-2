@@ -1,5 +1,9 @@
 name: Run Playwright Full Regression tests
 on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch: # Manually trigger the workflow
 jobs:
   test:
