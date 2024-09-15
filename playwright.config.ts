@@ -1,6 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
 import * as dotenv from "dotenv";
-import { TESTS } from "./src/config/environment";
 
 dotenv.config();
 /**
@@ -52,7 +51,7 @@ export default defineConfig({
       name: "ui",
       use: {
         ...devices["Desktop Chrome"],
-        headless: true,
+        headless: false,
         storageState: "src/.auth/user.json",
       },
       dependencies: ["setup"],

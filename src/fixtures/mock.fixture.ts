@@ -5,7 +5,7 @@ export class Mock {
   constructor(private page: Page) {}
 
   public async modifyReponse<T>(url: string, body: T, status: STATUS_CODES) {
-    await this.page.route(url, async (routeForModifications, request) => {
+    await this.page.route(url, async (routeForModifications) => {
       // Can be filtered, for example by method like below:
       //
       // if (request.method() === 'POST') {

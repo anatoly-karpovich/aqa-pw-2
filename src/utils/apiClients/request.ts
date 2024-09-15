@@ -4,17 +4,13 @@ import { apiConfig } from "../../config/apiConfig";
 import _ from "lodash";
 
 export class RequestApi {
-  private response: APIResponse;
+  private response!: APIResponse;
 
   async send<T extends IResponseFields>(options: IRequestOptions): Promise<IResponse<T>> {
-    try {
-      const requestContext = await request.newContext({ baseURL: options.baseURL ?? apiConfig.baseUrl });
-      this.response = await requestContext.fetch(options.url, _.omit(options, ["baseURL", "url"]));
-      if (this.response.status() >= 500) throw new Error("Request failed with status " + this.response.status());
-      return await this.transormReponse();
-    } catch (err) {
-      throw err;
-    }
+    const requestContext = await request.newContext({ baseURL: options.baseURL ?? apiConfig.baseUrl });
+    this.response = await requestContext.fetch(options.url, _.omit(options, ["baseURL", "url"]));
+    if (this.response.status() >= 500) throw new Error("Request failed with status " + this.response.status());
+    return await this.transormReponse();
   }
 
   private async transormReponse() {

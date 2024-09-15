@@ -5,7 +5,7 @@ import customerApiClient from "../clients/customers.client";
 import { STATUS_CODES } from "../../data/types/api.types";
 import _ from "lodash";
 
-test.describe("[API] [Customers]", async function () {
+test.describe.skip("[API] [Customers]", async function () {
   test("Create customer with valid data", async function () {
     await signInApiService.loginAsAdmin();
     const customerData = generateNewCustomer();

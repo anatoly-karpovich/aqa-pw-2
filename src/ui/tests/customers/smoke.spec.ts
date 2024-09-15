@@ -1,17 +1,17 @@
 import { test } from "@playwright/test";
-import { SignInService } from "../../services/signIn.service";
+import { SignInPageService } from "../../services/signIn.service";
 import { HomeService } from "../../services/home.service";
 import { CustomersListService } from "../../services/customers/customers.service";
 import { AddCustomerService } from "../../services/customers/addNewCustomer.service";
 
 test.describe.skip("[UI] [Customers] Smoke", async function () {
-  let signInService: SignInService;
+  let signInService: SignInPageService;
   let homeService: HomeService;
   let customersService: CustomersListService;
   let addNewCustomerService: AddCustomerService;
 
   test.beforeEach(async function ({ page }) {
-    signInService = new SignInService(page);
+    signInService = new SignInPageService(page);
     homeService = new HomeService(page);
     customersService = new CustomersListService(page);
     addNewCustomerService = new AddCustomerService(page);
@@ -19,7 +19,7 @@ test.describe.skip("[UI] [Customers] Smoke", async function () {
     await signInService.loginAsAdmin();
   });
 
-  test.afterEach(async function ({ page }) {
+  test.afterEach(async function () {
     //TODO: delete customer
   });
 

@@ -16,12 +16,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.10.0",
     "@playwright/test": "^1.46.1",
     "@types/ajv": "^1.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/lodash": "^4.17.7",
+    "@types/moment": "^2.13.0",
     "@types/node": "^22.4.1",
-    "cross-env": "^7.0.3"
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.5.0"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -30,6 +37,7 @@
     "allure-playwright": "^3.0.0-beta.10",
     "dotenv": "^16.4.5",
     "lodash": "^4.17.21",
+    "moment": "^2.30.1",
     "playwright-qase-reporter": "^2.0.12"
   }
 }

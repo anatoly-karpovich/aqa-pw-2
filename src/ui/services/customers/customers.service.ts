@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { AddNewCustomerPage } from "../../pages/customers/addNewCustomer.page.js";
 import { CustomersListPage } from "../../pages/customers/customers.page.js";
 import { expect, Page } from "@playwright/test";

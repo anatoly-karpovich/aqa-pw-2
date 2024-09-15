@@ -9,7 +9,7 @@ test.describe.skip("[UI] [Login]", async function () {
     // const usernameInput = page.locator('input[type="email"]');
     const emailInput = page.getByLabel("Email address");
     const passwordInput = page.getByPlaceholder("Enter password");
-    const img = page.getByAltText("Sample image");
+    // const img = page.getByAltText("Sample image");
     // const button = page.getByRole("button");
     const button = page.getByText("Login", { exact: true });
     //getByLabel
